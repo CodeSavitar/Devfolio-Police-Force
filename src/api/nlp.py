@@ -12,7 +12,7 @@ def search(url):
     value = scrapeit(url)
     if value == 1:
         print("WORKING")
-        f = open('api/data.json',)
+        f = open('api/data.json',encoding="utf-8")
         data = json.load(f)
 
         model = SentenceTransformer('bert-base-nli-mean-tokens')
@@ -116,7 +116,7 @@ def search(url):
 
         if len(criminal2) != 0:
             keys = criminal2[0].keys()
-            with open('final_list1.csv', 'w', newline='') as output_file:
+            with open('final_list1.csv', 'w', newline='',encoding="utf-8") as output_file:
                 dict_writer = csv.DictWriter(output_file, keys)
                 dict_writer.writeheader()
                 dict_writer.writerows(criminal2)     
@@ -124,10 +124,10 @@ def search(url):
         f.close()
         print('DONE')
         #os.remove("src/api/data.json")
-        with open("api/data.json","r+") as v:
+        with open("api/data.json","r+",encoding="utf-8") as v:
             v.truncate(0)   
         return 1
 
 #https://hackbout2.devfolio.co/submissions
-
+#adhithsagit0510@gmail.com
 
